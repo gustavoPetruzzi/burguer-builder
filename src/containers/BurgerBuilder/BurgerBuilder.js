@@ -93,6 +93,7 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () =>{
+        /*
         this.setState({loading: true})
         const order = {
             ingredients: this.state.ingredients,
@@ -120,6 +121,8 @@ class BurgerBuilder extends Component {
                 .finally(finllay =>{
                     this.setState({loading: false, purchasing: false});
                 })
+                */
+        this.props.history.push('/checkout');
     }
     render(){
         const disabledInfo ={
