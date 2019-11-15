@@ -42,15 +42,22 @@ class ContactData extends Component{
             },
 
             email:{
+                elementType:'input',
+                elementConfig:{
+                    type:'text',
+                    placeholder:'Your E-mail'
+                },
+                value:''
+            },
+            delivery: {
                 elementType:'select',
                 elementConfig:{
                     options:[
                         {value:'fastest', displayValue:'Fastest'},
-                        {value:'cheapest',displayValue:'Cheapest'}
-                    ],
+                        {value:'cheapest', displayValue:'Cheapest'},
+                    ]
                 }
-            },
-            delivery: '',
+            }
         },
 
         loading: false,
@@ -90,7 +97,12 @@ class ContactData extends Component{
         let form = (
             <form>
                 {formElementsArray.map(el =>(
-                    <Input key={el.id} elementType={el.config.elementType} elementConfig ={el.config.elementConfig} value={el.config.value}  />)
+                    <Input 
+                        key={el.id} 
+                        elementType={el.config.elementType} 
+                        elementConfig={el.config.elementConfig} 
+                        value={el.config.value}  
+                        />)
                 )}
                 <Button btnType="Success" clicked={this.orderHandler}>ORDER</Button>
             </form>
