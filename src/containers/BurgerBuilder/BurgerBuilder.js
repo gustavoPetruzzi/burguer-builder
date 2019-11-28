@@ -7,6 +7,9 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/WithErrorHandler';
+
+import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions';
 const INGREDIENTS_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -16,7 +19,7 @@ const INGREDIENTS_PRICES = {
 class BurgerBuilder extends Component {
 
     state ={
-        ingredients: null,
+        
         purchasable: false,
         totalPrice: 4,
         purchasing: false,
@@ -24,6 +27,7 @@ class BurgerBuilder extends Component {
         error: false,
     }
     componentDidMount(){
+        /*
         axios.get('https://react-my-burger-df9c2.firebaseio.com/ingredients.json')
             .then(response =>{
                 console.log(response.data);
@@ -32,6 +36,7 @@ class BurgerBuilder extends Component {
             .catch(error =>{
                 this.setState({error: true});
             })
+        */
     }
 
     updatePurchaseState (ingredients) {
@@ -130,7 +135,7 @@ class BurgerBuilder extends Component {
                 <Aux>
                     <Burger ingredients={this.state.ingredients} />
                     <BuildControls
-                    ingredientAdded={this.addIngredientHandler}
+                    ingredientAdded={this.props.onIngredientAdded}
                     ingredientRemoved={this.removeIngredientHandler}
                     disabled={disabledInfo}
                     price={this.state.totalPrice}
@@ -152,6 +157,18 @@ class BurgerBuilder extends Component {
     }
 }
 
+const mapStateToProps = state =>{
+    return{
+        ings: state.ingredients
+    }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return{
+        onIngredientAdded: (ingName) => dispatch({type: actionTypes.ADD_INGREDIENT, ingredientName: ingName}),
+        onIngredientRemoved: (ingName) => dispatch({type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName})
+    }
+}
 
 
-export default withErrorHandler(BurgerBuilder, axios);
+export default connect(mapStateToProps,mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));
