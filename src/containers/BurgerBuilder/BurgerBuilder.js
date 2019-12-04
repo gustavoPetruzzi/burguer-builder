@@ -10,12 +10,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/WithErrorHandler';
 
 import { connect } from 'react-redux';
 import * as actionTypes from '../../store/actions';
-const INGREDIENTS_PRICES = {
-    salad: 0.5,
-    cheese: 0.4,
-    meat: 1.3,
-    bacon: 0.7
-}
+
 class BurgerBuilder extends Component {
 
     state ={
@@ -48,14 +43,8 @@ class BurgerBuilder extends Component {
                 return sum + el;
             }, 0);
 
-        this.setState({purchasable: sum > 0});
+        return  sum > 0;
     }
-
-    /*
-        purchaseHandler(){
-            this.setState({purchasing:true});
-        }
-    */
 
     purchaseHandler = () => {
         this.setState({purchasing: true});
@@ -66,16 +55,7 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () =>{
-        const queryParams = [];
-        for(let i in this.state.ingredients){
-            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
-        }
-        queryParams.push('price=' + this.state.totalPrice);
-        const queryString = queryParams.join('&');
-        this.props.history.push({
-            pathname:'/checkout',
-            search:'?' + queryString
-        });
+        this.props.history.push('/checkout');
     }
     render(){
         const disabledInfo ={
@@ -107,8 +87,8 @@ class BurgerBuilder extends Component {
                     ingredientRemoved={this.props.onIngredientRemoved}
                     disabled={disabledInfo}
                     price={this.props.prc}
-                    purchasable={this.state.purchasable}
-                    //purchase={() => this.purchaseHandler()}
+                    purchasable={this.updatePurchaseState(this.props.ings)}
+                    
                     purchase={this.purchaseHandler}
                     />
                 </Aux> );
