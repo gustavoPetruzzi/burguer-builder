@@ -39,6 +39,8 @@ const reducer = (state = initialState, action) =>{
                 totalPrice: state.totalPrice - INGREDIENTS_PRICES[action.ingredientName]
 
             }
+        case action_types.GET_INGREDIENTS:
+            return state;
         default:
             return state;
     }
