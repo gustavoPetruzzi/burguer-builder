@@ -64,7 +64,7 @@ export const fetchOrdersFail = (error) =>{
 }
 
 export const fetchOrdersStart = () =>{
-    console.log('Entra');
+    
     return{
         type: actionTypes.FETCH_ORDERS_START
     }
