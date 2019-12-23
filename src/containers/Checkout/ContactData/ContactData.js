@@ -155,7 +155,7 @@ class ContactData extends Component{
             price: Number.parseFloat(this.props.prc).toFixed(2),
             orderData : formData,
         }
-        this.props.onOrderBurger(order);
+        this.props.onOrderBurger(this.props.token, order);
     }
 
     render(){
@@ -199,14 +199,15 @@ class ContactData extends Component{
 }
 const mapDispatchToProps = dispatch =>{
     return{
-        onOrderBurger: (orderData) =>dispatch(actions.purchaseBurger(orderData))
+        onOrderBurger: (token,orderData) =>dispatch(actions.purchaseBurger(token,orderData))
     }
 }
 const mapStateToProps = state =>{
     return{
         ings: state.burgerBuilder.ingredients,
         prc: state.burgerBuilder.totalPrice,
-        loading: state.order.loading
+        loading: state.order.loading,
+        token: state.auth.token
     }
 }
 
