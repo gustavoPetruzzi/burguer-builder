@@ -26,4 +26,10 @@ function App() {
   );
 }
 
+const mapDispatchToProps = dispatch =>{
+  return {
+    onTryAutoSignUp: () => dispatch()
+  }
+}
+
 export default connect()(App);
