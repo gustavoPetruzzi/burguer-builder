@@ -7,6 +7,7 @@ import Orders from './containers/Checkout/Orders/Orders';
 import Auth from './containers/Auth/Auth';
 import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import Logout from './containers/Auth/Logout/Logout';
+import { connect } from 'react-redux'
 function App() {
   return (
     
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);
