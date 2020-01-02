@@ -1,12 +1,9 @@
 import React,{Component} from 'react';
-import classes from './OrderSummary.module.css';
+
 import Aux from '../../../hoc/Auxi/Auxi';
 import Button from '../../UI/Button/Button';
 class OrderSummary  extends Component{
 
-    componentWillUpdate(){
-        console.log('order Summary re rendered');
-    }
 
     render(){
 

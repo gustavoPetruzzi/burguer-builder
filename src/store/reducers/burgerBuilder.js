@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {updateObject} from '../utility';
+import {updateObject} from '../../shared/utility';
 const initialState = {
     ingredients: null,
     totalPrice: 4,
@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) =>{
 
         default: return state;
     }
-    return state;
+    
 }
 
 export default reducer;

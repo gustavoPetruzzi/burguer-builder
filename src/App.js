@@ -2,23 +2,34 @@ import React, {useEffect} from 'react';
 import Layout from './hoc/Layout/Layout';
 import './App.css';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
-import Checkout from './containers/Checkout/Checkout';
-import Orders from './containers/Checkout/Orders/Orders';
-import Auth from './containers/Auth/Auth';
+
+
 import {Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Logout from './containers/Auth/Logout/Logout';
 import { connect } from 'react-redux'
 import * as actions from './store/actions/index';
+
+const asyncCheckout = asyncComponent(() =>{
+  return import('./containers/Checkout/Checkout');
+});
+
+const asyncOrders = asyncComponent(() =>{
+  return import('./containers/Checkout/Orders/Orders');
+});
+
+const asyncAuth = asyncComponent(() =>{
+  return import('./containers/Auth/Auth');
+});
+
 function App(props) {
   
   useEffect(() => {
-    console.log(props);
-    console.log("ENTRANDO");
     props.onTryAutoSignUp();
   }, [])
   let routes = (
     <Switch>
-      <Route path="/auth" component={Auth}  />
+      <Route path="/auth" component={asyncAuth}  />
       <Route path="/" exact component={BurgerBuilder} />
       <Redirect to="/" />
     </Switch> 
@@ -27,10 +38,12 @@ function App(props) {
   if(props.isAuthenticated){
     routes = (
       <Switch>
-        <Route path="/checkout" component={Checkout} />
-        <Route path="/orders" component={Orders} /> 
+        <Route path="/checkout" component={asyncCheckout} />
+        <Route path="/auth" component={asyncAuth}  />
+        <Route path="/orders" component={asyncOrders} /> 
         <Route path="/logout" component={Logout} />      
         <Route path="/" exact component={BurgerBuilder} />
+        
       </Switch>
     )
   }
