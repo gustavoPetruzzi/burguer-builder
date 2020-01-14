@@ -37,7 +37,7 @@
 
 1. #### Descargar este proyecto
 
-    #### `git clone https://github.com/gustavoPetruzzi/cheques-interbanking.git`
+    #### `git clone https://github.com/gustavoPetruzzi/burguer-builder.git`
   
 2. #### Desde el directorio raiz
 
