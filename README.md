@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Burger Builder
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20with-React-informational">
+  <img src="https://img.shields.io/github/issues/gustavoPetruzzi/cheques-interbanking">
+  <img src="https://img.shields.io/github/languages/top/gustavoPetruzzi/burguer-builder">
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/fIsBmIJ.png">
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+## Proyecto  de practica de React
 
-### `npm start`
+### ¿En que se basa este proyecto? 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Este proyecto está basado en el curso [React - The Complete Guide (incl Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/ "Curso udemy") dictado por la plataforma Udemy
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### ¿De que trata el proyecto?
 
-### `npm test`
+#### El proyecto consiste en una aplicación web donde cada usuario pueda armar su propia hamburguesa, guardarlas en el servidor (firebase) y acceder a sus órdenes donde se detalla el precio de la misma y los ingredientes utilizados.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### ¿Qué conceptos se aplican  en este proyecto?
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Conceptos básicos de React
+* Manejo de estados
+* Routing
+* SPA
+* Acceso de contenido AJAX a través de React
+* Redux
+* Autenticación
+---
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Como usar este proyecto
+ ---
+### Prerequisitos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. #### Descargar este proyecto
 
-### `npm run eject`
+    #### `git clone https://github.com/gustavoPetruzzi/cheques-interbanking.git`
+  
+2. #### Desde el directorio raiz
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ####  `npm install`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Usar el proyecto en "development mode"
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### `npm start`
 
-## Learn More
+Desde https://localhost:3000 en tu navegador podras ver la aplicacion en funcionamiento.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## <img height="50px" src="https://i.imgur.com/fIsBmIJ.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Click aquí para probar la aplicación ](https://builder-burger.netlify.com/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img height="50px" src="https://i.imgur.com/fIsBmIJ.png">
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
