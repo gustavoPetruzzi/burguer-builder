@@ -31,7 +31,7 @@ function App(props) {
     <Switch>
       <Route path="/auth" component={asyncAuth}  />
       <Route path="/" exact component={BurgerBuilder} />
-      <Redirect to="/" />
+      
     </Switch> 
   )
 
